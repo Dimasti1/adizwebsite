@@ -1,22 +1,25 @@
-import { Container } from "@/components/layout/container"
-import { Section } from "@/components/layout/section"
+import { Navbar } from "@/components/layout/navbar";
+import { Container } from "@/components/layout/container";
+import { Section } from "@/components/layout/section";
 
-const page = () => {
+export default function Home() {
   return (
-    <main>
-      <Section>
-        <Container>
-          <h1 className="text-4xl font-semibold">
-            Adizwebsite
-          </h1>
+    <>
+      <Navbar />
 
-          <p className="mt-4 text-muted-foreground">
-            Profressional websites for construction businesses.
-          </p>
-        </Container>
-      </Section>
-    </main>
-  )
+      <main>
+        <Section>
+          <Container>
+            <h1 className="text-4xl font-semibold">
+              AdizWebsite
+            </h1>
+
+            <p className="mt-4 text-muted-foreground">
+              Professional websites for construction businesses.
+            </p>
+          </Container>
+        </Section>
+      </main>
+    </>
+  );
 }
-
-export default page
