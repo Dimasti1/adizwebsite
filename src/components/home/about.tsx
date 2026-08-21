@@ -3,7 +3,7 @@ import { Section } from "@/components/layout/section";
 
 export function About() {
   return (
-    <Section>
+    <Section id="about">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
