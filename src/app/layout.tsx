@@ -20,6 +20,40 @@ export const metadata: Metadata = {
   },
   description:
     "AdizWebsite membantu kontraktor membangun website profesional untuk meningkatkan kepercayaan dan mendapatkan lebih banyak calon klien.",
+
+  applicationName: "AdizWebsite",
+
+  keywords: [
+    "jasa website",
+    "website bisnis",
+    "web developer",
+    "freelance web developer",
+    "website profesional",
+  ],
+
+  authors: [
+    {
+      name: "AdizWebsite",
+    },
+  ],
+
+  creator: "AdizWebsite",
+
+  openGraph: {
+    title: "AdizWebsite — Website Profesional untuk Bisnis",
+    description:
+      "AdizWebsite membantu bisnis membangun website profesional, terpercaya, dan dirancang untuk mengubah pengunjung menjadi calon pelanggan.",
+    siteName: "AdizWebsite",
+    locale: "id_ID",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AdizWebsite — Website Profesional untuk Bisnis",
+    description:
+      "AdizWebsite membantu bisnis membangun website profesional, terpercaya, dan dirancang untuk mengubah pengunjung menjadi calon pelanggan.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
