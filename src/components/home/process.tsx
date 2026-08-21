@@ -30,7 +30,7 @@ const steps = [
 
 export function Process() {
   return (
-    <Section>
+    <Section id="process">
       <Container>
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
