@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -15,14 +15,37 @@ const navigation = [
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className="md:hidden">
+    <div className="relative md:hidden">
       <Button
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen((open) => !open)}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
+        aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
       >
         {isOpen ? "Close" : "Menu"}
       </Button>
@@ -30,29 +53,32 @@ export function MobileMenu() {
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="absolute inset-x-0 top-16 border-b bg-background"
+          className="absolute right-0 top-12 w-64 rounded-xl border bg-background p-2 shadow-lg"
         >
-          <nav className="flex flex-col gap-1 p-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav aria-label="Mobile navigation">
+            <ul className="space-y-1">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="block rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
 
-            <Link
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-2"
-            >
-              <Button className="w-full">
-                Start a Project
-              </Button>
-            </Link>
+              <li className="pt-2">
+                <Link
+                  href="#contact"
+                  onClick={closeMenu}
+                  className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  Start a Project
+                </Link>
+              </li>
+            </ul>
           </nav>
         </div>
       )}

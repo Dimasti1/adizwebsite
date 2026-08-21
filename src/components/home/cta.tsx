@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/section";
 
 export function CTA() {
   return (
-    <Section>
+    <Section id="contact">
       <Container>
         <div className="overflow-hidden rounded-3xl border bg-foreground px-6 py-16 text-background sm:px-10 sm:py-20 lg:px-16">
           <div className="max-w-3xl">
@@ -23,8 +23,12 @@ export function CTA() {
             </p>
 
             <div className="mt-8">
-              <Link href="/contact" className="inline-flex h-10 items-center justify-center rounded-md bg-background px-6 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-background/90">
-              Mulai Konsultasi</Link>
+              <Link
+                href="#contact"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-background px-6 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-background/90"
+              >
+                Mulai Konsultasi
+              </Link>
             </div>
           </div>
         </div>
