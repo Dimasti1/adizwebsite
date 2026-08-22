@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { MobileMenu } from "./mobile-menu";
+import { Logo } from "./logo";
 
 const navigation = [
   { label: "Services", href: "#services" },
@@ -15,13 +16,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
       <Container>
         <nav className="flex h-16 items-center justify-between">
-          <Link
-            href="/"
-            className="font-semibold tracking-tight"
-            aria-label="AdizWebsite - Beranda"
-          >
-            AdizWebsite
-          </Link>
+          <Logo />
 
           <div className="hidden items-center gap-8 md:flex">
             {navigation.map((item) => (

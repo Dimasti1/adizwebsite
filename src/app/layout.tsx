@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/footer";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -18,10 +19,9 @@ export const metadata: Metadata = {
     default: "AdizWebsite — Website Profesional untuk Kontraktor",
     template: "%s | AdizWebsite",
   },
-  description:
-    "AdizWebsite membantu kontraktor membangun website profesional untuk meningkatkan kepercayaan dan mendapatkan lebih banyak calon klien.",
+  description: siteConfig.description,
 
-  applicationName: "AdizWebsite",
+  applicationName: siteConfig.name,
 
   keywords: [
     "jasa website",
@@ -33,17 +33,16 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "AdizWebsite",
+      name: siteConfig.name,
     },
   ],
 
-  creator: "AdizWebsite",
+  creator: siteConfig.name,
 
   openGraph: {
     title: "AdizWebsite — Website Profesional untuk Bisnis",
-    description:
-      "AdizWebsite membantu bisnis membangun website profesional, terpercaya, dan dirancang untuk mengubah pengunjung menjadi calon pelanggan.",
-    siteName: "AdizWebsite",
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     locale: "id_ID",
     type: "website",
   },
@@ -51,8 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AdizWebsite — Website Profesional untuk Bisnis",
-    description:
-      "AdizWebsite membantu bisnis membangun website profesional, terpercaya, dan dirancang untuk mengubah pengunjung menjadi calon pelanggan.",
+    description: siteConfig.description,
   },
 };
 

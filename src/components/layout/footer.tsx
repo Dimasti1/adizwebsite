@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
+import { Logo } from "./logo";
 
 const navigation = [
   { label: "Work", href: "#work" },
@@ -15,12 +16,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-10 py-12 sm:py-16 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <Link
-              href="/"
-              className="text-lg font-semibold tracking-tight"
-            >
-              AdizWebsite
-            </Link>
+            <Logo />
 
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Website profesional untuk membantu bisnis membangun kehadiran
