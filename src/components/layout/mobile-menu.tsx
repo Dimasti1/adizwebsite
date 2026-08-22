@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const navigation = [
   { label: "Services", href: "#services" },
@@ -71,7 +72,9 @@ export function MobileMenu() {
 
               <li className="pt-2">
                 <Link
-                  href="#contact"
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMenu}
                   className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                 >

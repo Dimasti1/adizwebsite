@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { MobileMenu } from "./mobile-menu";
 import { Logo } from "./logo";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { Button } from "@base-ui/react";
 
 const navigation = [
   { label: "Services", href: "#services" },
@@ -29,12 +31,14 @@ export function Navbar() {
               </Link>
             ))}
 
-            <Link
-              href="#contact"
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
-              Start a Project
-            </Link>
+              <Button>Start a Project</Button>
+            </a>
           </div>
 
           <MobileMenu />

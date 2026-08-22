@@ -6,6 +6,7 @@ import { Benefits } from "@/components/home/benefits";
 import { Process } from "@/components/home/process";
 import { About } from "@/components/home/about";
 import { CTA } from "@/components/home/cta";
+import { Contact } from "@/components/home/contact";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Process />
         <About />
         <CTA />
+        <Contact />
       </main>
     </>
   );
